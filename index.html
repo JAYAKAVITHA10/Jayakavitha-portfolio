@@ -21,47 +21,59 @@
 
     <header class="header">
 
+            <div class="scroll-progress">
+    <div class="scroll-progress-bar" id="scrollProgress"></div>
+</div>
         <nav class="navbar">
 
             <a href="#home" class="logo">
                 JAYAKAVITHA<span>.</span>
             </a>
 
-            <button class="menu-btn" id="menuBtn">
-                ☰
-            </button>
+            <button
+    class="menu-btn"
+    id="menuBtn"
+    aria-label="Open navigation menu">
+    ☰
+</button>
 
             <ul class="nav-links" id="navLinks">
 
-                <li>
-                    <a href="#home">Home</a>
-                </li>
+    <li>
+        <a href="#home" class="nav-link active">Home</a>
+    </li>
 
-                <li>
-                    <a href="#about">About</a>
-                </li>
+    <li>
+        <a href="#about" class="nav-link">About</a>
+    </li>
 
-                <li>
-                    <a href="#skills">Skills</a>
-                </li>
+    <li>
+        <a href="#skills" class="nav-link">Skills</a>
+    </li>
 
-                <li>
-                    <a href="#projects">Projects</a>
-                </li>
+    <li>
+        <a href="#projects" class="nav-link">Projects</a>
+    </li>
 
-                <li>
-                    <a href="#experience">Experience</a>
-                </li>
+    <li>
+        <a href="#experience" class="nav-link">Experience</a>
+    </li>
 
-                <li>
-                    <a href="#education">Education</a>
-                </li>
+    <li>
+        <a href="#education" class="nav-link">Education</a>
+    </li>
 
-                <li>
-                    <a href="#contact">Contact</a>
-                </li>
+    <li>
+        <a href="#resume" class="nav-link">Resume</a>
+    </li>
 
-            </ul>
+    <li>
+        <a href="#contact" class="nav-link">Contact</a>
+    </li>
+
+    
+
+</ul>
 
             <button id="themeToggle" class="theme-btn">
                 🌙
@@ -76,722 +88,1514 @@
 
     <main>
 
-        <section id="home" class="hero">
+<section id="home" class="hero">
 
-            <div class="hero-content">
+    <!-- Animated background -->
+    <div class="hero-bg">
+        <span class="glow glow-1"></span>
+        <span class="glow glow-2"></span>
+        <span class="glow glow-3"></span>
+    </div>
 
-                <p class="hero-small">
-                    HELLO, I'M
-                </p>
+    <div class="hero-content">
 
-                <h1>
-                    Jayakavitha <span>B.</span>
-                </h1>
+        <div class="hero-badge">
+            <span class="status-dot"></span>
+            Open to Opportunities
+        </div>
 
-                <h2>
-                    Software Developer
-                </h2>
+        <p class="hero-small">
+            HELLO, I'M
+        </p>
 
-                <p class="typing-text">
-                    <span id="typing"></span>
-                </p>
+        <h1>
+            Jayakavitha <span>B.</span>
+        </h1>
 
-                <p class="hero-description">
-                    I build responsive web applications, work with
-                    APIs and explore cloud computing and DevOps
-                    technologies.
-                </p>
+        <h2>
+            Software Developer
+        </h2>
 
-                <div class="hero-buttons">
+        <p class="typing-text">
+            <span id="typing"></span>
+        </p>
 
-                    <a href="#projects" class="btn primary-btn">
-                        View My Work
-                    </a>
+        <p class="hero-description">
+            I build responsive web applications and explore
+            cloud computing, DevOps and automation technologies
+            to create reliable digital solutions.
+        </p>
 
-                    <a href="assets/Jayakavitha_Resume.pdf"
-                        class="btn secondary-btn"
-                        download>
-                        Download Resume
-                    </a>
+        <div class="hero-buttons">
 
-                </div>
+            <a href="#projects" class="btn primary-btn">
+                View My Work
+                <span>↗</span>
+            </a>
 
-                <div class="social-links">
+            <a href="assets/Jayakavitha-B-Resume.pdf"
+               class="btn secondary-btn"
+               download>
+                Download Resume
+                <span>↓</span>
+            </a>
 
-                    <a href="https://github.com/JAYAKAVITHA10"
-                        target="_blank">
-                        GitHub
-                    </a>
+        </div>
 
-                    <a href="#contact">
-                        LinkedIn
-                    </a>
+        <div class="social-links">
 
-                </div>
+            <a href="https://github.com/JAYAKAVITHA10"
+               target="_blank"
+               rel="noopener noreferrer">
+                GitHub ↗
+            </a>
 
-            </div>
+            <a href="https://www.linkedin.com/in/jayakavitha-b-323417280/"
+               target="_blank"
+               rel="noopener noreferrer">
+                LinkedIn ↗
+            </a>
+
+            <a href="mailto:jayakavithamani10@gmail.com">
+                Email ↗
+            </a>
+
+        </div>
+
+    </div>
 
 
-            <div class="hero-card">
+    <!-- RIGHT SIDE -->
+
+    <div class="hero-card-wrapper">
+
+        <div class="hero-card">
+
+            <div class="profile-ring">
 
                 <div class="profile-circle">
                     JB
                 </div>
 
+            </div>
+
+            <div class="hero-card-info">
+
                 <div class="code-card">
 
-                    <p>
-                        &lt;developer&gt;
-                    </p>
-
-                    <p>
-                        &nbsp;&nbsp;HTML / CSS
-                    </p>
-
-                    <p>
-                        &nbsp;&nbsp;JavaScript
-                    </p>
-
-                    <p>
-                        &nbsp;&nbsp;React.js
-                    </p>
-
-                    <p>
-                        &nbsp;&nbsp;Cloud & DevOps
-                    </p>
-
-                    <p>
-                        &lt;/developer&gt;
-                    </p>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================= ABOUT ================= -->
-
-        <section id="about" class="section">
-
-            <div class="section-heading">
-
-                <p>GET TO KNOW ME</p>
-
-                <h2>
-                    About Me
-                </h2>
-
-            </div>
-
-            <div class="about-container">
-
-                <div class="about-text">
-
-                    <p>
-                        I'm Jayakavitha B, a B.Tech Information
-                        Technology graduate from SASTRA University
-                        with an interest in software development,
-                        cloud computing and DevOps.
-                    </p>
-
-                    <p>
-                        I have experience working on frontend
-                        development, API integration, reusable UI
-                        components and document automation.
-                    </p>
-
-                    <p>
-                        I'm currently expanding my knowledge in
-                        cloud infrastructure, DevOps practices,
-                        automation and modern deployment
-                        technologies.
-                    </p>
-
-                    <div class="about-highlights">
-
-                        <div>
-                            <strong>B.Tech</strong>
-                            <span>Information Technology</span>
-                        </div>
-
-                        <div>
-                            <strong>Cloud & DevOps</strong>
-                            <span>UpGrad Program</span>
-                        </div>
-
-                        <div>
-                            <strong>Based in</strong>
-                            <span>Tamil Nadu, India</span>
-                        </div>
-
+                    <div class="code-top">
+                        <span></span>
+                        <span></span>
+                        <span></span>
                     </div>
 
-                </div>
-
-                <div class="about-card">
-
-                    <div class="about-card-icon">
-                        &lt;/&gt;
-                    </div>
-
-                    <h3>
-                        Building & Learning
-                    </h3>
-
                     <p>
-                        Web Development
+                        <span class="code-purple">&lt;</span>developer<span class="code-purple">&gt;</span>
                     </p>
 
                     <p>
-                        Cloud Computing
+                        name:
+                        <strong>"Jayakavitha"</strong>
                     </p>
 
                     <p>
-                        DevOps & Automation
+                        role:
+                        <strong>"Software Developer"</strong>
+                    </p>
+
+                    <p>
+                        focus:
+                        <strong>"Cloud & DevOps"</strong>
+                    </p>
+
+                    <p>
+                        <span class="code-purple">&lt;/</span>developer<span class="code-purple">&gt;</span>
                     </p>
 
                 </div>
 
             </div>
 
-        </section>
+        </div>
 
 
-        <!-- ================= SKILLS ================= -->
+        <div class="floating-card floating-card-one">
 
-        <section id="skills" class="section skills-section">
+            <span class="floating-icon">☁</span>
 
-            <div class="section-heading">
-
-                <p>WHAT I WORK WITH</p>
-
-                <h2>
-                    Skills
-                </h2>
-
+            <div>
+                <strong>Cloud</strong>
+                <small>AWS · Azure · GCP</small>
             </div>
 
-            <div class="skills-grid">
+        </div>
 
-                <div class="skill-card">
-                    <div class="skill-icon">HTML</div>
-                    <h3>HTML5</h3>
-                    <p>Semantic & responsive structure</p>
+
+        <div class="floating-card floating-card-two">
+
+            <span class="floating-icon">⚙</span>
+
+            <div>
+                <strong>DevOps</strong>
+                <small>Automation · CI/CD</small>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+       <!-- ================= ABOUT ================= -->
+
+<section id="about" class="section">
+
+    <div class="section-heading">
+        <p>GET TO KNOW ME</p>
+
+        <h2>About Me</h2>
+    </div>
+
+    <div class="about-container">
+
+        <div class="about-text">
+
+            <p>
+                I'm Jayakavitha B, a B.Tech Information Technology
+                graduate from SASTRA University with an interest in
+                software development, cloud computing and DevOps.
+            </p>
+
+            <p>
+                I have experience working on frontend development,
+                API integration, reusable UI components and document
+                automation. I enjoy building practical solutions
+                and continuously learning new technologies.
+            </p>
+
+            <p>
+                Currently, I'm expanding my knowledge in cloud
+                infrastructure, DevOps practices, automation and
+                modern deployment technologies.
+            </p>
+
+            <div class="about-highlights">
+
+                <div class="about-highlight-card">
+                    <span class="highlight-icon">🎓</span>
+                    <strong>B.Tech</strong>
+                    <span>Information Technology</span>
                 </div>
 
-                <div class="skill-card">
-                    <div class="skill-icon">CSS</div>
-                    <h3>CSS3</h3>
-                    <p>Responsive design & animations</p>
+                <div class="about-highlight-card">
+                    <span class="highlight-icon">☁</span>
+                    <strong>Cloud & DevOps</strong>
+                    <span>UpGrad Program</span>
                 </div>
 
-                <div class="skill-card">
-                    <div class="skill-icon">JS</div>
-                    <h3>JavaScript</h3>
-                    <p>Interactive web experiences</p>
-                </div>
-
-                <div class="skill-card">
-                    <div class="skill-icon">R</div>
-                    <h3>React.js</h3>
-                    <p>Component-based UI development</p>
-                </div>
-
-                <div class="skill-card">
-                    <div class="skill-icon">C#</div>
-                    <h3>C# / .NET</h3>
-                    <p>Application development</p>
-                </div>
-
-                <div class="skill-card">
-                    <div class="skill-icon">SQL</div>
-                    <h3>SQL</h3>
-                    <p>Database & data management</p>
-                </div>
-
-                <div class="skill-card">
-                    <div class="skill-icon">API</div>
-                    <h3>REST APIs</h3>
-                    <p>API integration</p>
-                </div>
-
-                <div class="skill-card">
-                    <div class="skill-icon">PY</div>
-                    <h3>Python</h3>
-                    <p>Scripting & automation</p>
-                </div>
-
-                <div class="skill-card">
-                    <div class="skill-icon">AWS</div>
-                    <h3>AWS</h3>
-                    <p>Cloud infrastructure</p>
-                </div>
-
-                <div class="skill-card">
-                    <div class="skill-icon">AZ</div>
-                    <h3>Azure</h3>
-                    <p>Cloud services</p>
-                </div>
-
-                <div class="skill-card">
-                    <div class="skill-icon">GCP</div>
-                    <h3>GCP</h3>
-                    <p>Cloud platform</p>
-                </div>
-
-                <div class="skill-card">
-                    <div class="skill-icon">DEV</div>
-                    <h3>DevOps</h3>
-                    <p>CI/CD & automation</p>
+                <div class="about-highlight-card">
+                    <span class="highlight-icon">📍</span>
+                    <strong>Tamil Nadu</strong>
+                    <span>India</span>
                 </div>
 
             </div>
 
-        </section>
+        </div>
 
 
-        <!-- ================= PROJECTS ================= -->
+        <div class="about-card">
 
-        <section id="projects" class="section">
+            <div class="about-card-top">
+                <span class="about-card-icon">&lt;/&gt;</span>
 
-            <div class="section-heading">
-
-                <p>MY RECENT WORK</p>
-
-                <h2>
-                    Projects
-                </h2>
-
+                <span class="about-status">
+                    ● Learning
+                </span>
             </div>
 
+            <h3>Currently Exploring</h3>
 
-            <div class="project-filters">
+            <div class="learning-item">
+                <span>☁</span>
+                <div>
+                    <strong>Cloud Computing</strong>
+                    <small>AWS · Azure · GCP</small>
+                </div>
+            </div>
 
-                <button class="filter-btn active"
-                    data-filter="all">
-                    All
+            <div class="learning-item">
+                <span>⚙</span>
+                <div>
+                    <strong>DevOps</strong>
+                    <small>CI/CD · Automation</small>
+                </div>
+            </div>
+
+            <div class="learning-item">
+                <span>◈</span>
+                <div>
+                    <strong>Infrastructure</strong>
+                    <small>Terraform · Kubernetes</small>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SKILLS ================= -->
+
+<section id="skills" class="section skills-section">
+
+    <div class="section-heading">
+        <p>MY TECHNICAL TOOLKIT</p>
+        <h2>Skills & Technologies</h2>
+    </div>
+
+    <div class="skills-showcase">
+
+        <!-- FRONTEND -->
+        <div class="skill-category-card">
+
+            <div class="skill-category-header">
+                <div class="skill-category-icon">◈</div>
+
+                <div>
+                    <span>01</span>
+                    <h3>Frontend Development</h3>
+                </div>
+            </div>
+
+            <div class="technology-list">
+
+                <button
+                    class="technology-item"
+                    onclick="showSkill('HTML & CSS')">
+                    HTML & CSS
                 </button>
 
-                <button class="filter-btn"
-                    data-filter="cloud">
-                    Cloud
+                <button
+                    class="technology-item"
+                    onclick="showSkill('JavaScript')">
+                    JavaScript
                 </button>
 
-                <button class="filter-btn"
-                    data-filter="devops">
+                <button
+                    class="technology-item"
+                    onclick="showSkill('React.js')">
+                    React.js
+                </button>
+
+                <button
+                    class="technology-item"
+                    onclick="showSkill('Bootstrap')">
+                    Bootstrap
+                </button>
+
+                <button
+                    class="technology-item"
+                    onclick="showSkill('Tailwind CSS')">
+                    Tailwind CSS
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- BACKEND -->
+        <div class="skill-category-card">
+
+            <div class="skill-category-header">
+                <div class="skill-category-icon">◇</div>
+
+                <div>
+                    <span>02</span>
+                    <h3>Backend & Database</h3>
+                </div>
+            </div>
+
+            <div class="technology-list">
+
+                <button
+                    class="technology-item"
+                    onclick="showSkill('C#')">
+                    C#
+                </button>
+
+                <button
+                    class="technology-item"
+                    onclick="showSkill('.NET MVC')">
+                    .NET MVC
+                </button>
+
+                <button
+                    class="technology-item"
+                    onclick="showSkill('SQL')">
+                    SQL
+                </button>
+
+                <button
+                    class="technology-item"
+                    onclick="showSkill('Dapper')">
+                    Dapper
+                </button>
+
+                <button
+                    class="technology-item"
+                    onclick="showSkill('LINQ')">
+                    LINQ
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- CLOUD -->
+        <div class="skill-category-card">
+
+            <div class="skill-category-header">
+                <div class="skill-category-icon">☁</div>
+
+                <div>
+                    <span>03</span>
+                    <h3>Cloud Platforms</h3>
+                </div>
+            </div>
+
+            <div class="technology-list">
+
+                <button
+                    class="technology-item"
+                    onclick="showSkill('AWS')">
+                    AWS
+                </button>
+
+                <button
+                    class="technology-item"
+                    onclick="showSkill('Microsoft Azure')">
+                    Microsoft Azure
+                </button>
+
+                <button
+                    class="technology-item"
+                    onclick="showSkill('Google Cloud')">
+                    Google Cloud
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- DEVOPS -->
+        <div class="skill-category-card">
+
+            <div class="skill-category-header">
+                <div class="skill-category-icon">⚙</div>
+
+                <div>
+                    <span>04</span>
+                    <h3>DevOps & Automation</h3>
+                </div>
+            </div>
+
+            <div class="technology-list">
+
+                <button
+                    class="technology-item"
+                    onclick="showSkill('Terraform')">
+                    Terraform
+                </button>
+
+                <button
+                    class="technology-item"
+                    onclick="showSkill('Jenkins')">
+                    Jenkins
+                </button>
+
+                <button
+                    class="technology-item"
+                    onclick="showSkill('Docker')">
+                    Docker
+                </button>
+
+                <button
+                    class="technology-item"
+                    onclick="showSkill('Kubernetes')">
+                    Kubernetes
+                </button>
+
+                <button
+                    class="technology-item"
+                    onclick="showSkill('Ansible')">
+                    Ansible
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- SKILL INFORMATION PANEL -->
+
+    <div class="skill-info-panel" id="skillInfoPanel">
+
+        <button
+            class="skill-info-close"
+            onclick="closeSkill()">
+            ×
+        </button>
+
+        <span class="skill-info-label">TECHNOLOGY</span>
+
+        <h3 id="skillInfoTitle">Select a technology</h3>
+
+        <p id="skillInfoDescription">
+            Click any technology above to see more information.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CERTIFICATE ================= -->
+
+<section id="certificate" class="section certificate-section">
+
+    <div class="section-heading">
+        <p>MY CERTIFICATION</p>
+        <h2>Cloud Computing & DevOps</h2>
+    </div>
+
+    <div class="certificate-card">
+
+        <div class="certificate-icon">
+            🎓
+        </div>
+
+        <div class="certificate-content">
+
+            <span class="certificate-status">
+                COMPLETED
+            </span>
+
+            <h3>Cloud Computing & DevOps Program</h3>
+
+            <p class="certificate-provider">
+                UpGrad
+            </p>
+
+            <p class="certificate-description">
+                Completed a comprehensive Cloud Computing & DevOps program
+                covering cloud platforms, infrastructure, automation,
+                containers, CI/CD, and DevOps practices.
+            </p>
+
+            <div class="certificate-tags">
+                <span>AWS</span>
+                <span>Azure</span>
+                <span>Google Cloud</span>
+                <span>Terraform</span>
+                <span>Jenkins</span>
+                <span>Docker</span>
+                <span>Kubernetes</span>
+            </div>
+
+            <a
+    href="assets/UpGrad-Cloud-DevOps-Certificate.pdf"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="certificate-button">
+    View Certificate ↗
+</a>
+
+        </div>
+
+    </div>
+
+</section>
+
+ <!-- ================= PROJECTS ================= -->
+
+<section id="projects" class="section">
+
+    <div class="section-heading">
+
+        <p>MY RECENT WORK</p>
+
+        <h2>Projects</h2>
+
+    </div>
+
+
+    <!-- Project Filters -->
+
+    <div class="project-filters">
+
+        <button class="filter-btn active" data-filter="all">
+            All
+        </button>
+
+        <button class="filter-btn" data-filter="cloud">
+            Cloud
+        </button>
+
+        <button class="filter-btn" data-filter="devops">
+            DevOps
+        </button>
+
+        <button class="filter-btn" data-filter="web">
+            Web
+        </button>
+
+    </div>
+
+
+    <!-- Projects -->
+
+    <div class="projects-grid">
+
+
+        <!-- Project 01 -->
+
+        <article class="project-card" data-category="cloud">
+
+            <div class="project-card-top">
+
+                <span class="project-number">
+                    01
+                </span>
+
+                <span class="project-tag">
+                    AWS
+                </span>
+
+            </div>
+
+
+            <div class="project-icon">
+                ☁
+            </div>
+
+
+            <h3>
+                Cloud Infrastructure
+            </h3>
+
+
+            <p>
+                Designed and deployed cloud infrastructure using
+                Terraform and AWS services including VPC, EC2,
+                ALB and S3.
+            </p>
+
+
+            <div class="project-tech">
+
+                <span>Terraform</span>
+                <span>AWS</span>
+                <span>EC2</span>
+                <span>VPC</span>
+
+            </div>
+
+
+            <div class="project-footer">
+
+                <span class="project-type">
+                    Cloud Infrastructure
+                </span>
+
+                <button class="project-link" onclick="openProject(1)">
+    View Project →
+</button>
+
+            </div>
+
+        </article>
+
+
+        <!-- Project 02 -->
+
+        <article class="project-card" data-category="cloud">
+
+            <div class="project-card-top">
+
+                <span class="project-number">
+                    02
+                </span>
+
+                <span class="project-tag">
+                    GCP
+                </span>
+
+            </div>
+
+
+            <div class="project-icon">
+                ☁
+            </div>
+
+
+            <h3>
+                Cloud Ticketing Platform
+            </h3>
+
+
+            <p>
+                Built a cloud-based scaling prototype using
+                Google Cloud services for a high-demand
+                ticket booking scenario.
+            </p>
+
+
+            <div class="project-tech">
+
+                <span>GCP</span>
+                <span>Cloud Run</span>
+                <span>Cloud SQL</span>
+                <span>Spanner</span>
+
+            </div>
+
+
+            <div class="project-footer">
+
+                <span class="project-type">
+                    Cloud Computing
+                </span>
+
+                <button class="project-link" onclick="openProject(2)">
+    View Project →
+</button>
+
+            </div>
+
+        </article>
+
+
+        <!-- Project 03 -->
+
+        <article class="project-card" data-category="devops">
+
+            <div class="project-card-top">
+
+                <span class="project-number">
+                    03
+                </span>
+
+                <span class="project-tag">
+                    DEVOPS
+                </span>
+
+            </div>
+
+
+            <div class="project-icon">
+                ⚙
+            </div>
+
+
+            <h3>
+                CI/CD Automation
+            </h3>
+
+
+            <p>
+                Worked with CI/CD concepts and automation using
+                Jenkins, Docker, GitHub and cloud deployment
+                workflows.
+            </p>
+
+
+            <div class="project-tech">
+
+                <span>Jenkins</span>
+                <span>Docker</span>
+                <span>GitHub</span>
+                <span>CI/CD</span>
+
+            </div>
+
+
+            <div class="project-footer">
+
+                <span class="project-type">
                     DevOps
-                </button>
+                </span>
 
-                <button class="filter-btn"
-                    data-filter="web">
-                    Web
-                </button>
+                <button class="project-link" onclick="openProject(3)">
+    View Project →
+</button>
+
+            </div>
+
+        </article>
+
+
+        <!-- Project 04 -->
+
+        <article class="project-card" data-category="devops">
+
+            <div class="project-card-top">
+
+                <span class="project-number">
+                    04
+                </span>
+
+                <span class="project-tag">
+                    K8S
+                </span>
 
             </div>
 
 
-            <div class="projects-grid">
-
-                <article class="project-card"
-                    data-category="cloud">
-
-                    <div class="project-number">
-                        01
-                    </div>
-
-                    <span class="project-tag">
-                        AWS
-                    </span>
-
-                    <h3>
-                        Cloud Infrastructure
-                    </h3>
-
-                    <p>
-                        Designed cloud infrastructure using
-                        Terraform, VPC, EC2, ALB, S3 and other
-                        AWS services.
-                    </p>
-
-                    <div class="project-tech">
-                        Terraform · AWS · EC2 · VPC
-                    </div>
-
-                </article>
+            <div class="project-icon">
+                ◈
+            </div>
 
 
-                <article class="project-card"
-                    data-category="cloud">
-
-                    <div class="project-number">
-                        02
-                    </div>
-
-                    <span class="project-tag">
-                        GCP
-                    </span>
-
-                    <h3>
-                        Scalable Ticket Platform
-                    </h3>
-
-                    <p>
-                        Cloud architecture prototype exploring
-                        scalable application deployment using
-                        Google Cloud services.
-                    </p>
-
-                    <div class="project-tech">
-                        GCP · Cloud Run · Cloud SQL · Spanner
-                    </div>
-
-                </article>
+            <h3>
+                Kubernetes Deployment
+            </h3>
 
 
-                <article class="project-card"
-                    data-category="cloud">
-
-                    <div class="project-number">
-                        03
-                    </div>
-
-                    <span class="project-tag">
-                        Azure
-                    </span>
-
-                    <h3>
-                        Azure Infrastructure
-                    </h3>
-
-                    <p>
-                        Worked with Azure networking, VNets,
-                        peering, load balancing, storage and
-                        infrastructure concepts.
-                    </p>
-
-                    <div class="project-tech">
-                        Azure · VNet · Load Balancer · Storage
-                    </div>
-
-                </article>
+            <p>
+                Practiced container orchestration and application
+                deployment using Docker and Kubernetes concepts
+                in a cloud environment.
+            </p>
 
 
-                <article class="project-card"
-                    data-category="devops">
+            <div class="project-tech">
 
-                    <div class="project-number">
-                        04
-                    </div>
-
-                    <span class="project-tag">
-                        DevOps
-                    </span>
-
-                    <h3>
-                        CI/CD Pipeline
-                    </h3>
-
-                    <p>
-                        Explored automated application build,
-                        containerization and deployment using
-                        DevOps tools.
-                    </p>
-
-                    <div class="project-tech">
-                        Jenkins · Docker · Git · Kubernetes
-                    </div>
-
-                </article>
-
-
-                <article class="project-card"
-                    data-category="web">
-
-                    <div class="project-number">
-                        05
-                    </div>
-
-                    <span class="project-tag">
-                        Web
-                    </span>
-
-                    <h3>
-                        Responsive Web Applications
-                    </h3>
-
-                    <p>
-                        Developed reusable frontend components
-                        and integrated APIs to create responsive
-                        web experiences.
-                    </p>
-
-                    <div class="project-tech">
-                        React.js · JavaScript · CSS · REST APIs
-                    </div>
-
-                </article>
-
-
-                <article class="project-card"
-                    data-category="devops">
-
-                    <div class="project-number">
-                        06
-                    </div>
-
-                    <span class="project-tag">
-                        Automation
-                    </span>
-
-                    <h3>
-                        Document Automation
-                    </h3>
-
-                    <p>
-                        Worked on document automation and
-                        workflow-based solutions for business
-                        processes.
-                    </p>
-
-                    <div class="project-tech">
-                        C# · .NET · APIs · Automation
-                    </div>
-
-                </article>
+                <span>Docker</span>
+                <span>Kubernetes</span>
+                <span>AWS</span>
+                <span>EKS</span>
 
             </div>
 
-        </section>
 
+            <div class="project-footer">
 
-        <!-- ================= EXPERIENCE ================= -->
+                <span class="project-type">
+                    Containerization
+                </span>
 
-        <section id="experience"
-            class="section experience-section">
-
-            <div class="section-heading">
-
-                <p>MY PROFESSIONAL JOURNEY</p>
-
-                <h2>
-                    Experience
-                </h2>
+                <button class="project-link" onclick="openProject(4)">
+    View Project →
+</button>
 
             </div>
 
-            <div class="timeline">
+        </article>
 
-                <div class="timeline-item">
 
-                    <div class="timeline-dot"></div>
+        <!-- Project 05 -->
 
-                    <div class="timeline-content">
+        <article class="project-card" data-category="web">
 
-                        <span class="timeline-date">
-                            Junior Software Developer
+            <div class="project-card-top">
+
+                <span class="project-number">
+                    05
+                </span>
+
+                <span class="project-tag">
+                    WEB
+                </span>
+
+            </div>
+
+
+            <div class="project-icon">
+                &lt;/&gt;
+            </div>
+
+
+            <h3>
+                Responsive Web Development
+            </h3>
+
+
+            <p>
+                Developed responsive web interfaces using modern
+                frontend technologies with reusable components
+                and API integration.
+            </p>
+
+
+            <div class="project-tech">
+
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+                <span>React</span>
+
+            </div>
+
+
+            <div class="project-footer">
+
+                <span class="project-type">
+                    Web Development
+                </span>
+
+                <button class="project-link" onclick="openProject(5)">
+    View Project →
+</button>
+
+            </div>
+
+        </article>
+
+
+        <!-- Project 06 -->
+
+        <article class="project-card" data-category="web">
+
+            <div class="project-card-top">
+
+                <span class="project-number">
+                    06
+                </span>
+
+                <span class="project-tag">
+                    .NET
+                </span>
+
+            </div>
+
+
+            <div class="project-icon">
+                C#
+            </div>
+
+
+            <h3>
+                Document Automation
+            </h3>
+
+
+            <p>
+                Worked on document automation workflows and
+                reusable UI components while integrating APIs
+                and business processes.
+            </p>
+
+
+            <div class="project-tech">
+
+                <span>C#</span>
+                <span>.NET MVC</span>
+                <span>SQL</span>
+                <span>APIs</span>
+
+            </div>
+
+
+            <div class="project-footer">
+
+                <span class="project-type">
+                    Software Development
+                </span>
+
+                <button class="project-link" onclick="openProject(6)">
+    View Project →
+</button>
+
+            </div>
+
+        </article>
+
+
+    </div>
+
+</section>
+
+
+ <!-- ================= EXPERIENCE ================= -->
+
+<section id="experience" class="section experience-section">
+
+    <div class="section-heading">
+
+        <p>MY PROFESSIONAL JOURNEY</p>
+
+        <h2>
+            Experience
+        </h2>
+
+    </div>
+
+
+    <div class="experience-timeline">
+
+        <!-- EXPERIENCE 01 -->
+
+        <div class="experience-item">
+
+            <div class="experience-marker">
+
+                <span></span>
+
+            </div>
+
+
+            <div class="experience-card">
+
+                <div class="experience-header">
+
+                    <div>
+
+                        <span class="experience-date">
+                            2024 – July 2025
                         </span>
 
                         <h3>
-                            Sysekam Innovations
+                            Junior Software Developer
                         </h3>
 
-                        <p>
-                            Worked on frontend development and
-                            document automation solutions.
-                        </p>
+                        <h4>
+                            Sysekam Innovations
+                        </h4>
 
-                        <ul>
+                    </div>
 
-                            <li>
-                                Developed reusable UI components.
-                            </li>
-
-                            <li>
-                                Integrated APIs with web applications.
-                            </li>
-
-                            <li>
-                                Worked with .NET MVC and C#.
-                            </li>
-
-                            <li>
-                                Worked with React.js and JavaScript.
-                            </li>
-
-                            <li>
-                                Worked with SQL databases.
-                            </li>
-
-                            <li>
-                                Supported workflow automation and
-                                document-based solutions.
-                            </li>
-
-                        </ul>
-
+                    <div class="experience-type">
+                        Full-Time
                     </div>
 
                 </div>
 
-            </div>
 
-        </section>
+                <p class="experience-summary">
 
+                    Worked on frontend development and
+                    document automation solutions for
+                    business workflows.
 
-        <!-- ================= EDUCATION ================= -->
-
-        <section id="education" class="section">
-
-            <div class="section-heading">
-
-                <p>MY ACADEMIC BACKGROUND</p>
-
-                <h2>
-                    Education
-                </h2>
-
-            </div>
+                </p>
 
 
-            <div class="education-grid">
+                <ul class="experience-list">
 
-                <div class="education-card">
+                    <li>
+                        Developed reusable UI components
+                        for web applications.
+                    </li>
 
-                    <span>
-                        2024
-                    </span>
+                    <li>
+                        Integrated APIs with web applications.
+                    </li>
 
-                    <h3>
-                        B.Tech Information Technology
-                    </h3>
+                    <li>
+                        Worked with .NET MVC and C#.
+                    </li>
 
-                    <p>
-                        SASTRA University
-                    </p>
+                    <li>
+                        Worked with React.js and JavaScript.
+                    </li>
 
-                    <small>
-                        Thanjavur, Tamil Nadu
-                    </small>
+                    <li>
+                        Worked with SQL databases.
+                    </li>
 
-                </div>
+                    <li>
+                        Supported workflow automation and
+                        document-based solutions.
+                    </li>
+
+                </ul>
 
 
-                <div class="education-card">
+                <div class="experience-tech">
 
-                    <span>
-                        2025 – Present
-                    </span>
+                    <span>C#</span>
 
-                    <h3>
-                        Cloud Computing & DevOps
-                    </h3>
+                    <span>.NET MVC</span>
 
-                    <p>
-                        UpGrad
-                    </p>
+                    <span>React.js</span>
 
-                    <small>
-                        Cloud infrastructure, DevOps,
-                        automation and deployment
-                    </small>
+                    <span>JavaScript</span>
+
+                    <span>SQL</span>
+
+                    <span>APIs</span>
 
                 </div>
 
             </div>
 
-        </section>
+        </div>
 
 
-        <!-- ================= CONTACT ================= -->
+        <!-- CURRENT LEARNING -->
 
-        <section id="contact"
-            class="section contact-section">
+        <div class="experience-item current-item">
 
-            <div class="section-heading">
+            <div class="experience-marker">
 
-                <p>LET'S CONNECT</p>
-
-                <h2>
-                    Get In Touch
-                </h2>
+                <span></span>
 
             </div>
 
-            <div class="contact-container">
 
-                <div class="contact-text">
+            <div class="experience-card">
 
-                    <h3>
-                        Have an opportunity or project?
-                    </h3>
+                <div class="experience-header">
 
-                    <p>
-                        I'm open to opportunities where I can
-                        contribute my development skills while
-                        continuing to grow in cloud and DevOps.
-                    </p>
+                    <div>
 
-                    <div class="contact-links">
+                        <span class="experience-date">
+                            Sep 2025 – Present
+                        </span>
 
-                        <a href="mailto:YOUR_EMAIL@gmail.com">
+                        <h3>
+                            Cloud Computing & DevOps
+                        </h3>
+
+                        <h4>
+                            UpGrad
+                        </h4>
+
+                    </div>
+
+                    <div class="experience-type current">
+                        Learning
+                    </div>
+
+                </div>
+
+
+                <p class="experience-summary">
+
+                    Currently building practical knowledge
+                    in cloud infrastructure, DevOps,
+                    automation and deployment technologies.
+
+                </p>
+
+
+                <div class="experience-tech">
+
+                    <span>AWS</span>
+
+                    <span>Azure</span>
+
+                    <span>GCP</span>
+
+                    <span>Terraform</span>
+
+                    <span>Jenkins</span>
+
+                    <span>Docker</span>
+
+                    <span>Kubernetes</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= EDUCATION ================= -->
+
+<section id="education" class="section education-section">
+
+    <div class="section-heading">
+
+        <p>MY ACADEMIC BACKGROUND</p>
+
+        <h2>
+            Education
+        </h2>
+
+    </div>
+
+
+    <div class="education-grid">
+
+
+        <!-- BTECH -->
+
+        <div class="education-card">
+
+            <div class="education-icon">
+                🎓
+            </div>
+
+            <span class="education-year">
+                2024
+            </span>
+
+            <h3>
+                B.Tech Information Technology
+            </h3>
+
+            <p class="education-institute">
+                SASTRA University
+            </p>
+
+            <small>
+                Thanjavur, Tamil Nadu
+            </small>
+
+            <div class="education-line"></div>
+
+            <p class="education-description">
+
+                Bachelor's degree in Information Technology
+                with a foundation in software development,
+                programming and computer technologies.
+
+            </p>
+
+        </div>
+
+
+        <!-- UPGRAD -->
+
+        <div class="education-card">
+
+            <div class="education-icon">
+                ☁
+            </div>
+
+            <span class="education-year">
+                2025 – Present
+            </span>
+
+            <h3>
+                Cloud Computing & DevOps
+            </h3>
+
+            <p class="education-institute">
+                UpGrad
+            </p>
+
+            <small>
+                Cloud infrastructure, DevOps & automation
+            </small>
+
+            <div class="education-line"></div>
+
+            <p class="education-description">
+
+                Practical learning focused on cloud platforms,
+                infrastructure as code, CI/CD, containers,
+                orchestration and deployment.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+ <!-- ================= CONTACT ================= -->
+
+<section id="contact" class="section contact-section">
+
+    <div class="section-heading">
+
+        <p>LET'S CONNECT</p>
+
+        <h2>Get In Touch</h2>
+
+    </div>
+
+
+    <div class="contact-container">
+
+
+        <!-- LEFT SIDE -->
+
+        <div class="contact-info">
+
+            <div class="contact-intro">
+
+                <span class="contact-status">
+                    <span class="status-dot"></span>
+                    Open to opportunities
+                </span>
+
+                <h3>
+                    Let's build something
+                    <span>meaningful.</span>
+                </h3>
+
+                <p>
+                    I'm open to opportunities where I can
+                    contribute my development skills while
+                    continuing to grow in cloud and DevOps.
+                </p>
+
+            </div>
+
+
+            <!-- CONTACT CARDS -->
+
+            <div class="contact-cards">
+
+
+                <!-- EMAIL -->
+
+                <a
+    href="https://mail.google.com/mail/?view=cm&fs=1&to=jayakavithamani10@gmail.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="contact-card">
+
+                    <div class="contact-card-icon">
+                        ✉
+                    </div>
+
+                    <div>
+
+                        <small>Email</small>
+
+                        <strong>
                             jayakavithamani10@gmail.com
-                        </a>
+                        </strong>
 
-                        <a href="https://github.com/JAYAKAVITHA10"
-                            target="_blank">
-                            github.com/JAYAKAVITHA10
-                        </a>
+                    </div>
 
-                        <a href="YOUR_LINKEDIN_URL"
-                            target="_blank">
-                            https://www.linkedin.com/in/jayakavitha-b-323417280/
-                        </a>
+                    <span class="contact-arrow">
+                        ↗
+                    </span>
+
+                </a>
+
+
+                <!-- GITHUB -->
+
+                <a
+                    href="https://github.com/JAYAKAVITHA10"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="contact-card">
+
+                    <div class="contact-card-icon">
+                        ◉
+                    </div>
+
+                    <div>
+
+                        <small>GitHub</small>
+
+                        <strong>
+                            JAYAKAVITHA10
+                        </strong>
+
+                    </div>
+
+                    <span class="contact-arrow">
+                        ↗
+                    </span>
+
+                </a>
+
+
+                <!-- LINKEDIN -->
+
+                <a
+                    href="https://www.linkedin.com/in/jayakavitha-b-323417280/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="contact-card">
+
+                    <div class="contact-card-icon">
+                        in
+                    </div>
+
+                    <div>
+
+                        <small>LinkedIn</small>
+
+                        <strong>
+                            Jayakavitha B.
+                        </strong>
+
+                    </div>
+
+                    <span class="contact-arrow">
+                        ↗
+                    </span>
+
+                </a>
+
+
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT SIDE -->
+
+        <div class="contact-form-wrapper">
+
+            <div class="form-header">
+
+                <span>CONTACT ME</span>
+
+                <h3>
+                    Send a message
+                </h3>
+
+                <p>
+                    Have a question or opportunity?
+                    Feel free to reach out.
+                </p>
+
+            </div>
+
+
+            <form
+                class="contact-form"
+                id="contactForm">
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="name">
+                            Your Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            placeholder="Enter your name"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            Your Email
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Enter your email"
+                            required>
 
                     </div>
 
                 </div>
 
 
-                <form class="contact-form"
-                    id="contactForm">
+                <div class="form-group">
 
-                    <input
-                        type="text"
-                        id="name"
-                        placeholder="Your Name"
-                        required>
-
-                    <input
-                        type="email"
-                        id="email"
-                        placeholder="Your Email"
-                        required>
+                    <label for="message">
+                        Your Message
+                    </label>
 
                     <textarea
                         id="message"
                         rows="6"
-                        placeholder="Your Message"
-                        required>
-                    </textarea>
+                        placeholder="Write your message..."
+                        required></textarea>
 
-                    <button
-                        type="submit"
-                        class="btn primary-btn">
-                        Send Message
-                    </button>
+                </div>
 
-                    <p id="formMessage"></p>
 
-                </form>
+                <button
+                    type="submit"
+                    class="contact-submit">
 
+                    <span>Send Message</span>
+
+                    <span>→</span>
+
+                </button>
+
+
+                <p id="formMessage"></p>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= RESUME ================= -->
+
+<section id="resume" class="section resume-section">
+
+    <div class="section-heading">
+        <p>MY RESUME</p>
+        <h2>Let's Connect Professionally</h2>
+    </div>
+
+    <div class="resume-container">
+
+        <div class="resume-content">
+
+            <div class="resume-icon">
+                📄
             </div>
 
-        </section>
+            <div class="resume-text">
+                <span class="resume-label">AVAILABLE FOR OPPORTUNITIES</span>
 
-    </main>
+                <h3>My Resume</h3>
 
+                <p>
+                    Explore my professional experience, technical skills,
+                    education, and Cloud & DevOps learning journey.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="resume-actions">
+
+            <a
+                href="assets/Jayakavitha-B-Resume.pdf"
+                target="_blank"
+                class="resume-btn resume-view-btn">
+                View Resume ↗
+            </a>
+
+            <a
+                href="assets/Jayakavitha-B-Resume.pdf"
+                download="Jayakavitha-B-Resume.pdf"
+                class="resume-btn resume-download-btn">
+                Download Resume ↓
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
 
     <!-- ================= FOOTER ================= -->
 
@@ -814,7 +1618,49 @@
         ↑
     </button>
 
+<!-- ================= PROJECT DETAILS POPUP ================= -->
 
+<div class="project-modal" id="projectModal">
+
+    <div class="project-modal-content">
+
+        <button class="project-modal-close" onclick="closeProject()">
+            ×
+        </button>
+
+        <p class="project-modal-number" id="modalNumber">
+            PROJECT 01
+        </p>
+
+        <h2 id="modalTitle">
+            Project Title
+        </h2>
+
+        <p class="project-modal-description" id="modalDescription">
+            Project description goes here.
+        </p>
+
+        <div class="modal-section">
+
+            <h3>Technologies</h3>
+
+            <div class="modal-tech" id="modalTech">
+            </div>
+
+        </div>
+
+        <div class="modal-section">
+
+            <h3>What I Worked On</h3>
+
+            <ul id="modalWork">
+            </ul>
+
+        </div>
+
+    </div>
+
+</div>
     <script src="script.js"></script>
 
 </body>
