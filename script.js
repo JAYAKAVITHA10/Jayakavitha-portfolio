@@ -5,11 +5,13 @@
 const menuBtn = document.getElementById("menuBtn");
 const navLinks = document.getElementById("navLinks");
 
-menuBtn.addEventListener("click", () => {
+if (menuBtn && navLinks) {
 
-    navLinks.classList.toggle("show");
+    menuBtn.addEventListener("click", () => {
+        navLinks.classList.toggle("show");
+    });
 
-});
+}
 
 
 /* Close mobile menu when a link is clicked */
@@ -18,7 +20,9 @@ document.querySelectorAll(".nav-links a").forEach(link => {
 
     link.addEventListener("click", () => {
 
-        navLinks.classList.remove("show");
+        if (navLinks) {
+            navLinks.classList.remove("show");
+        }
 
     });
 
@@ -29,23 +33,28 @@ document.querySelectorAll(".nav-links a").forEach(link => {
    DARK / LIGHT MODE
 ===================================================== */
 
-const themeToggle = document.getElementById("themeToggle");
+const themeToggle =
+    document.getElementById("themeToggle");
 
-themeToggle.addEventListener("click", () => {
+if (themeToggle) {
 
-    document.body.classList.toggle("dark");
+    themeToggle.addEventListener("click", () => {
 
-    if (document.body.classList.contains("dark")) {
+        document.body.classList.toggle("dark");
 
-        themeToggle.textContent = "☀️";
+        if (document.body.classList.contains("dark")) {
 
-    } else {
+            themeToggle.textContent = "☀️";
 
-        themeToggle.textContent = "🌙";
+        } else {
 
-    }
+            themeToggle.textContent = "🌙";
 
-});
+        }
+
+    });
+
+}
 
 
 /* =====================================================
@@ -69,7 +78,12 @@ let deleting = false;
 
 function typeEffect() {
 
-    const currentWord = words[wordIndex];
+    if (!typingElement) {
+        return;
+    }
+
+    const currentWord =
+        words[wordIndex];
 
     if (!deleting) {
 
@@ -81,11 +95,17 @@ function typeEffect() {
 
         characterIndex++;
 
-        if (characterIndex === currentWord.length) {
+        if (
+            characterIndex ===
+            currentWord.length
+        ) {
 
             deleting = true;
 
-            setTimeout(typeEffect, 1500);
+            setTimeout(
+                typeEffect,
+                1500
+            );
 
             return;
         }
@@ -106,8 +126,13 @@ function typeEffect() {
 
             wordIndex++;
 
-            if (wordIndex === words.length) {
+            if (
+                wordIndex ===
+                words.length
+            ) {
+
                 wordIndex = 0;
+
             }
 
         }
@@ -118,58 +143,10 @@ function typeEffect() {
         typeEffect,
         deleting ? 50 : 90
     );
+
 }
 
 typeEffect();
-
-
-/* =====================================================
-   PROJECT FILTER
-===================================================== */
-
-const filterButtons =
-    document.querySelectorAll(".filter-btn");
-
-const projectCards =
-    document.querySelectorAll(".project-card");
-
-
-filterButtons.forEach(button => {
-
-    button.addEventListener("click", () => {
-
-        filterButtons.forEach(btn => {
-            btn.classList.remove("active");
-        });
-
-        button.classList.add("active");
-
-        const filter =
-            button.getAttribute("data-filter");
-
-        projectCards.forEach(card => {
-
-            const category =
-                card.getAttribute("data-category");
-
-            if (
-                filter === "all" ||
-                category === filter
-            ) {
-
-                card.classList.remove("hide");
-
-            } else {
-
-                card.classList.add("hide");
-
-            }
-
-        });
-
-    });
-
-});
 
 
 /* =====================================================
@@ -183,60 +160,93 @@ const formMessage =
     document.getElementById("formMessage");
 
 
-contactForm.addEventListener("submit", (event) => {
+if (contactForm) {
 
-    event.preventDefault();
+    contactForm.addEventListener(
+        "submit",
+        (event) => {
 
-    formMessage.textContent =
-        "Thank you! Your message has been received.";
+            event.preventDefault();
 
-    contactForm.reset();
+            if (formMessage) {
 
-});
+                formMessage.textContent =
+                    "Thank you! Your message has been received.";
+
+            }
+
+            contactForm.reset();
+
+        }
+    );
+
+}
 
 
 /* =====================================================
    CURRENT YEAR
 ===================================================== */
 
-document.getElementById("year").textContent =
-    new Date().getFullYear();
+const yearElement =
+    document.getElementById("year");
+
+if (yearElement) {
+
+    yearElement.textContent =
+        new Date().getFullYear();
+
+}
 
 
 /* =====================================================
    SCROLL TO TOP
 ===================================================== */
 
-const scrollTop =
+const scrollTopButton =
     document.getElementById("scrollTop");
 
 
-window.addEventListener("scroll", () => {
+window.addEventListener(
+    "scroll",
+    () => {
 
-    if (window.scrollY > 500) {
+        if (!scrollTopButton) {
+            return;
+        }
 
-        scrollTop.classList.add("show");
+        if (window.scrollY > 500) {
 
-    } else {
+            scrollTopButton.classList.add("show");
 
-        scrollTop.classList.remove("show");
+        } else {
+
+            scrollTopButton.classList.remove("show");
+
+        }
 
     }
+);
 
-});
 
+if (scrollTopButton) {
 
-scrollTop.addEventListener("click", () => {
+    scrollTopButton.addEventListener(
+        "click",
+        () => {
 
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
 
-});
+        }
+    );
+
+}
+
 
 /* =====================================================
-   STEP 2 - SCROLL PROGRESS
+   SCROLL PROGRESS
 ===================================================== */
 
 const scrollProgress =
@@ -248,12 +258,24 @@ const header =
 
 function updateScrollProgress() {
 
+    if (!scrollProgress) {
+        return;
+    }
+
     const scrollTop =
         window.scrollY;
 
     const documentHeight =
         document.documentElement.scrollHeight -
         document.documentElement.clientHeight;
+
+    if (documentHeight <= 0) {
+
+        scrollProgress.style.width = "0%";
+
+        return;
+
+    }
 
     const scrollPercentage =
         (scrollTop / documentHeight) * 100;
@@ -262,15 +284,19 @@ function updateScrollProgress() {
         `${scrollPercentage}%`;
 
 
-    /* Add shadow to navbar */
+    /* Navbar shadow */
 
-    if (scrollTop > 20) {
+    if (header) {
 
-        header.classList.add("scrolled");
+        if (scrollTop > 20) {
 
-    } else {
+            header.classList.add("scrolled");
 
-        header.classList.remove("scrolled");
+        } else {
+
+            header.classList.remove("scrolled");
+
+        }
 
     }
 
@@ -289,14 +315,18 @@ updateScrollProgress();
 
 
 /* =====================================================
-   STEP 2 - ACTIVE NAVIGATION
+   ACTIVE NAVIGATION
 ===================================================== */
 
 const sections =
-    document.querySelectorAll("main section[id]");
+    document.querySelectorAll(
+        "main section[id]"
+    );
 
 const navigationLinks =
-    document.querySelectorAll(".nav-link");
+    document.querySelectorAll(
+        ".nav-link"
+    );
 
 
 function updateActiveNavigation() {
@@ -325,7 +355,8 @@ function updateActiveNavigation() {
                 sectionTop + sectionHeight
         ) {
 
-            currentSection = sectionId;
+            currentSection =
+                sectionId;
 
         }
 
@@ -336,12 +367,13 @@ function updateActiveNavigation() {
 
         link.classList.remove("active");
 
-
         const target =
             link.getAttribute("href");
 
-
-        if (target === `#${currentSection}`) {
+        if (
+            target ===
+            `#${currentSection}`
+        ) {
 
             link.classList.add("active");
 
@@ -362,307 +394,10 @@ window.addEventListener(
 
 updateActiveNavigation();
 
+
 /* =====================================================
-   PROJECT DETAILS MODAL
+   INTERACTIVE SKILLS
 ===================================================== */
-
-
-/* Project information */
-
-const projectDetails = {
-
-    1: {
-        number: "PROJECT 01",
-        title: "AWS Cloud Infrastructure",
-
-        description:
-            "Designed and documented a cloud infrastructure setup using AWS services and Terraform. The project focused on networking, compute resources, load balancing and infrastructure as code.",
-
-        technologies: [
-            "AWS",
-            "Terraform",
-            "VPC",
-            "EC2",
-            "ALB",
-            "S3"
-        ],
-
-        work: [
-            "Created and configured a VPC-based cloud infrastructure.",
-            "Worked with public and private subnet concepts.",
-            "Configured EC2 instances for application infrastructure.",
-            "Worked with Application Load Balancer concepts.",
-            "Used Terraform for infrastructure as code.",
-            "Documented the complete infrastructure setup."
-        ]
-    },
-
-
-    2: {
-        number: "PROJECT 02",
-        title: "Scalable Ticket Platform",
-
-        description:
-            "A cloud architecture prototype focused on building a scalable ticketing platform using Google Cloud services.",
-
-        technologies: [
-            "Google Cloud",
-            "Cloud Run",
-            "Cloud SQL",
-            "Spanner",
-            "Cloud Storage"
-        ],
-
-        work: [
-            "Designed a scalable cloud architecture.",
-            "Worked with Cloud Run for application deployment.",
-            "Configured Cloud SQL for relational database requirements.",
-            "Explored Spanner for scalable database workloads.",
-            "Worked with Google Cloud infrastructure concepts.",
-            "Documented the architecture and deployment process."
-        ]
-    },
-
-
-    3: {
-        number: "PROJECT 03",
-        title: "Azure Infrastructure",
-
-        description:
-            "A cloud infrastructure project focused on Azure networking, virtual networks, peering, load balancing and storage concepts.",
-
-        technologies: [
-            "Microsoft Azure",
-            "VNet",
-            "VNet Peering",
-            "Load Balancer",
-            "Storage",
-            "Availability Sets"
-        ],
-
-        work: [
-            "Created and configured Azure virtual networks.",
-            "Worked with VNet peering concepts.",
-            "Configured availability and infrastructure components.",
-            "Worked with Azure Load Balancer concepts.",
-            "Explored Azure Storage configurations.",
-            "Documented the Azure infrastructure design."
-        ]
-    },
-
-
-    4: {
-        number: "PROJECT 04",
-        title: "CI/CD Pipeline",
-
-        description:
-            "A DevOps learning project focused on automated application build, containerization and deployment using commonly used DevOps tools.",
-
-        technologies: [
-            "Jenkins",
-            "Docker",
-            "Git",
-            "Kubernetes",
-            "CI/CD"
-        ],
-
-        work: [
-            "Created a basic CI/CD workflow.",
-            "Worked with Jenkins pipeline concepts.",
-            "Containerized applications using Docker.",
-            "Worked with Git-based source control.",
-            "Explored Kubernetes deployment concepts.",
-            "Documented the build and deployment workflow."
-        ]
-    },
-
-
-    5: {
-        number: "PROJECT 05",
-        title: "Responsive Web Applications",
-
-        description:
-            "Worked on responsive web development using reusable frontend components, JavaScript and API integration.",
-
-        technologies: [
-            "React.js",
-            "JavaScript",
-            "HTML",
-            "CSS",
-            "REST APIs"
-        ],
-
-        work: [
-            "Developed reusable frontend components.",
-            "Created responsive web interfaces.",
-            "Integrated APIs with web applications.",
-            "Worked with JavaScript-based interactions.",
-            "Focused on clean and responsive layouts.",
-            "Worked with frontend development practices."
-        ]
-    },
-
-
-    6: {
-        number: "PROJECT 06",
-        title: "Document Automation",
-
-        description:
-            "Worked on document automation and workflow-based solutions designed to simplify business processes and document-related tasks.",
-
-        technologies: [
-            "C#",
-            ".NET",
-            "APIs",
-            "Document Automation",
-            "Workflow Automation"
-        ],
-
-        work: [
-            "Worked on document automation solutions.",
-            "Supported workflow-based business processes.",
-            "Worked with C# and .NET technologies.",
-            "Integrated APIs with application workflows.",
-            "Worked with document-based solutions.",
-            "Supported reusable and automated processes."
-        ]
-    }
-
-};
-
-
-/* Open project */
-
-function openProject(projectNumber) {
-
-    const project = projectDetails[projectNumber];
-
-    if (!project) {
-        return;
-    }
-
-
-    /* Get modal elements */
-
-    const modal =
-        document.getElementById("projectModal");
-
-    const modalNumber =
-        document.getElementById("modalNumber");
-
-    const modalTitle =
-        document.getElementById("modalTitle");
-
-    const modalDescription =
-        document.getElementById("modalDescription");
-
-    const modalTech =
-        document.getElementById("modalTech");
-
-    const modalWork =
-        document.getElementById("modalWork");
-
-
-    /* Add project information */
-
-    modalNumber.textContent =
-        project.number;
-
-    modalTitle.textContent =
-        project.title;
-
-    modalDescription.textContent =
-        project.description;
-
-
-    /* Technologies */
-
-    modalTech.innerHTML = "";
-
-    project.technologies.forEach(technology => {
-
-        const tech =
-            document.createElement("span");
-
-        tech.textContent =
-            technology;
-
-        modalTech.appendChild(tech);
-
-    });
-
-
-    /* Work */
-
-    modalWork.innerHTML = "";
-
-    project.work.forEach(item => {
-
-        const listItem =
-            document.createElement("li");
-
-        listItem.textContent =
-            item;
-
-        modalWork.appendChild(listItem);
-
-    });
-
-
-    /* Show modal */
-
-    modal.classList.add("show");
-
-    /* Prevent page scrolling */
-
-    document.body.style.overflow = "hidden";
-}
-
-
-/* Close project */
-
-function closeProject() {
-
-    const modal =
-        document.getElementById("projectModal");
-
-    modal.classList.remove("show");
-
-    /* Allow page scrolling again */
-
-    document.body.style.overflow = "";
-}
-
-
-/* Close when clicking outside the box */
-
-document.addEventListener("click", (event) => {
-
-    const modal =
-        document.getElementById("projectModal");
-
-    if (event.target === modal) {
-
-        closeProject();
-
-    }
-
-});
-
-
-/* Close with Escape key */
-
-document.addEventListener("keydown", (event) => {
-
-    if (event.key === "Escape") {
-
-        closeProject();
-
-    }
-
-});
-
-/* ================= INTERACTIVE SKILLS ================= */
 
 const skillDescriptions = {
 
@@ -719,20 +454,41 @@ const skillDescriptions = {
 
     "Ansible":
         "Used for learning configuration management and infrastructure automation."
+
 };
 
 
 function showSkill(skillName) {
 
-    const panel = document.getElementById("skillInfoPanel");
-    const title = document.getElementById("skillInfoTitle");
-    const description = document.getElementById("skillInfoDescription");
+    const panel =
+        document.getElementById(
+            "skillInfoPanel"
+        );
 
-    if (!panel || !title || !description) {
+    const title =
+        document.getElementById(
+            "skillInfoTitle"
+        );
+
+    const description =
+        document.getElementById(
+            "skillInfoDescription"
+        );
+
+
+    if (
+        !panel ||
+        !title ||
+        !description
+    ) {
+
         return;
+
     }
 
-    title.textContent = skillName;
+
+    title.textContent =
+        skillName;
 
     description.textContent =
         skillDescriptions[skillName] ||
@@ -744,16 +500,21 @@ function showSkill(skillName) {
         behavior: "smooth",
         block: "nearest"
     });
+
 }
 
 
 function closeSkill() {
 
-    const panel = document.getElementById("skillInfoPanel");
+    const panel =
+        document.getElementById(
+            "skillInfoPanel"
+        );
 
     if (!panel) {
         return;
     }
 
     panel.classList.remove("show");
+
 }

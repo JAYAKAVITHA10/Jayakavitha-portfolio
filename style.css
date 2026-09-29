@@ -1920,47 +1920,6 @@ footer p:first-child {
    STEP 2 - ADVANCED NAVBAR
 ===================================================== */
 
-/* Scroll progress container */
-
-.scroll-progress {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-
-    width: 100%;
-    height: 3px;
-
-    background: transparent;
-
-    overflow: hidden;
-}
-
-
-/* Actual progress */
-
-.scroll-progress-bar {
-    width: 0%;
-    height: 100%;
-
-    background: linear-gradient(
-        90deg,
-        var(--accent),
-        #8b5cf6,
-        #06b6d4
-    );
-
-    transition: width 0.08s linear;
-}
-
-
-/* Better navbar shadow while scrolling */
-
-.header.scrolled {
-    box-shadow:
-        0 10px 35px rgba(0, 0, 0, 0.08);
-}
-
-
 /* Navigation links */
 
 .nav-link {
@@ -3895,4 +3854,350 @@ color: var(--text);
         font-size: 21px;
     }
 
+}
+
+
+
+
+/* ================= ADDITIONAL CERTIFICATES ================= */
+
+.additional-certificates {
+    width: 100%;
+}
+
+
+.additional-certificate-heading {
+    text-align: center;
+
+    margin-bottom: 35px;
+}
+
+
+.additional-certificate-heading p {
+    margin-bottom: 8px;
+
+    color: var(--primary);
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+
+.additional-certificate-heading h3 {
+    margin: 0;
+
+    color: var(--text);
+
+    font-size: 30px;
+}
+
+
+/* ================= CAROUSEL ================= */
+
+.certificate-carousel {
+    position: relative;
+
+    width: 100%;
+
+    overflow: hidden;
+
+    padding: 20px 0 35px;
+
+    mask-image:
+        linear-gradient(
+            to right,
+            transparent,
+            black 8%,
+            black 92%,
+            transparent
+        );
+}
+
+
+.certificate-track {
+    display: flex;
+
+    width: max-content;
+
+    gap: 24px;
+
+    animation:
+        certificateScroll 28s linear infinite;
+}
+
+
+.certificate-track:hover {
+    animation-play-state: paused;
+}
+
+
+/* ================= CERTIFICATE CARD ================= */
+
+.certificate-slide {
+    flex: 0 0 310px;
+
+    display: block;
+
+    overflow: hidden;
+
+    text-decoration: none;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.07);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+}
+
+
+.certificate-slide:hover {
+    transform: translateY(-10px);
+
+    border-color: var(--primary);
+
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.13);
+}
+
+
+/* ================= CERTIFICATE PREVIEW ================= */
+
+.certificate-preview {
+    height: 205px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--bg),
+            var(--surface)
+        );
+
+    border-bottom: 1px solid var(--border);
+}
+
+
+.certificate-preview-icon {
+    width: 75px;
+    height: 75px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            #8b5cf6
+        );
+
+    font-size: 32px;
+
+    box-shadow:
+        0 12px 25px rgba(0, 0, 0, 0.12);
+}
+
+
+.certificate-preview > span {
+    color: var(--muted);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+
+/* ================= CARD CONTENT ================= */
+
+.certificate-slide-content {
+    padding: 22px;
+}
+
+
+.certificate-slide-content h4 {
+    margin: 0 0 8px;
+
+    color: var(--text);
+
+    font-size: 17px;
+
+    line-height: 1.4;
+}
+
+
+.certificate-slide-content p {
+    margin: 0 0 15px;
+
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+
+.certificate-view {
+    color: var(--primary);
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+
+/* ================= ANIMATION ================= */
+
+@keyframes certificateScroll {
+
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(
+            calc(-50% - 12px)
+        );
+    }
+
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 700px) {
+
+    .main-certificate-card {
+        grid-template-columns: 1fr;
+
+        padding: 30px;
+
+        gap: 25px;
+    }
+
+
+    .main-certificate-icon {
+        width: 90px;
+        height: 90px;
+
+        font-size: 40px;
+    }
+
+
+    .main-certificate-content h3 {
+        font-size: 23px;
+    }
+
+
+    .certificate-slide {
+        flex-basis: 270px;
+    }
+
+
+    .certificate-preview {
+        height: 180px;
+    }
+
+
+    .certificate-track {
+        gap: 18px;
+
+        animation-duration: 24s;
+    }
+
+}
+
+
+@media (max-width: 450px) {
+
+    .main-certificate-card {
+        padding: 22px;
+    }
+
+
+    .main-certificate-content h3 {
+        font-size: 21px;
+    }
+
+
+    .certificate-slide {
+        flex-basis: 250px;
+    }
+
+
+    .certificate-preview {
+        height: 165px;
+    }
+
+}
+
+/* =====================================================
+   FINAL SCROLL PROGRESS
+===================================================== */
+
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 4px;
+
+    background: transparent;
+
+    z-index: 99999;
+
+    pointer-events: none;
+}
+
+
+.scroll-progress-bar {
+    width: 0%;
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        var(--accent),
+        #8b5cf6,
+        #06b6d4
+    );
+
+    transition: width 0.08s linear;
+}
+
+
+/* Navbar shadow while scrolling */
+
+.header.scrolled {
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.10);
+}
+
+
+body.dark .header.scrolled {
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.35);
 }
