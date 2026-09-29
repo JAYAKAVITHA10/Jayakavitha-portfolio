@@ -149,36 +149,112 @@ function typeEffect() {
 typeEffect();
 
 
-/* =====================================================
-   CONTACT FORM
-===================================================== */
+/* CONTACT FORM */
 
-const contactForm =
-    document.getElementById("contactForm");
+const contactForm = document.getElementById("contactForm");
+const formMessage = document.getElementById("formMessage");
 
-const formMessage =
-    document.getElementById("formMessage");
+if (contactForm && formMessage) {
 
+    contactForm.addEventListener("submit", async function (event) {
 
-if (contactForm) {
+        event.preventDefault();
 
-    contactForm.addEventListener(
-        "submit",
-        (event) => {
+        // Get form values
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const message = document.getElementById("message").value.trim();
 
-            event.preventDefault();
+        // Get submit button
+        const submitButton = contactForm.querySelector(".contact-submit");
+        const submitText = submitButton
+            ? submitButton.querySelector("span:first-child")
+            : null;
 
-            if (formMessage) {
+        // Basic validation
+        if (!name || !email || !message) {
 
-                formMessage.textContent =
-                    "Thank you! Your message has been received.";
+            formMessage.textContent =
+                "Please fill in all the fields.";
+
+            return;
+        }
+
+        // Show sending status
+        formMessage.textContent = "Sending...";
+
+        if (submitButton) {
+            submitButton.disabled = true;
+        }
+
+        if (submitText) {
+            submitText.textContent = "Sending...";
+        }
+
+        try {
+
+            // Send data to backend
+            const response = await fetch(
+                "http://127.0.0.1:5000/api/contact",
+                {
+                    method: "POST",
+
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+
+                    body: JSON.stringify({
+                        name: name,
+                        email: email,
+                        message: message
+                    })
+                }
+            );
+
+            // Convert backend response to JSON
+            const data = await response.json();
+
+            // Backend returned an error
+            if (!response.ok) {
+
+                throw new Error(
+                    data.message ||
+                    "Unable to send your message."
+                );
 
             }
 
+            // Success message
+            formMessage.textContent =
+                "Thank you! Your message has been sent successfully.";
+
+            // Clear form
             contactForm.reset();
 
+        } catch (error) {
+
+            console.error(
+                "Contact form error:",
+                error
+            );
+
+            formMessage.textContent =
+                "Unable to send your message. Please try again.";
+
+        } finally {
+
+            // Enable button again
+            if (submitButton) {
+                submitButton.disabled = false;
+            }
+
+            if (submitText) {
+                submitText.textContent = "Send Message";
+            }
+
         }
-    );
+
+    });
 
 }
 

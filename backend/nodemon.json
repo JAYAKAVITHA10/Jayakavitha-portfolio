@@ -1,0 +1,14 @@
+{
+  "watch": [
+    "server.js",
+    "controllers",
+    "routes"
+  ],
+  "ignore": [
+    "data/messages.json",
+    "data/**",
+    "node_modules/**",
+    ".env"
+  ],
+  "ext": "js"
+}
