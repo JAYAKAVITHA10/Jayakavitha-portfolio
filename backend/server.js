@@ -35,7 +35,11 @@ const PORT =
 app.use(
     helmet()
 );
-
+app.use(
+    cors({
+        origin: process.env.FRONTEND_URL
+    })
+);
 
 /* CORS */
 

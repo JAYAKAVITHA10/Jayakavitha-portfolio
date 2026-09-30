@@ -111,6 +111,17 @@ const createMessage = async (req, res) => {
         });
 
         if (error) {
+    console.error("Resend email error:");
+    console.error(error);
+
+    return res.status(500).json({
+        success: false,
+        message: "Your message was saved, but the email notification could not be sent."
+    });
+}
+
+
+        if (error) {
             console.error("Resend email error:");
             console.error(error);
 
@@ -138,15 +149,7 @@ const createMessage = async (req, res) => {
         });
     }
 };
-if (error) {
-    console.error("Resend email error:");
-    console.error(error);
 
-    return res.status(500).json({
-        success: false,
-        message: "Your message was saved, but the email notification could not be sent."
-    });
-}
 const getMessages = async (req, res) => {
     try {
         const messages = await Contact.find()
