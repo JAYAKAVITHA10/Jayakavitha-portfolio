@@ -18,6 +18,14 @@ transporter.verify(function (error, success) {
     }
 });
 
+const escapeHtml = (value) => {
+    return String(value)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+};
 
 // ===============================
 // CREATE CONTACT MESSAGE
@@ -38,6 +46,10 @@ const createMessage = async (req, res) => {
                 message: "All fields are required."
             });
         }
+
+        const safeName = escapeHtml(name.trim());
+const safeEmail = escapeHtml(email.trim());
+const safeMessage = escapeHtml(message.trim());
 
         // Save message to MongoDB
         const contact = await Contact.create({
@@ -65,26 +77,26 @@ ${message.trim()}
             `,
 
             html: `
-                <h2>New Portfolio Message</h2>
+    <h2>New Portfolio Message</h2>
 
-                <p>
-                    <strong>Name:</strong>
-                    ${name.trim()}
-                </p>
+    <p>
+        <strong>Name:</strong>
+        ${safeName}
+    </p>
 
-                <p>
-                    <strong>Email:</strong>
-                    ${email.trim()}
-                </p>
+    <p>
+        <strong>Email:</strong>
+        ${safeEmail}
+    </p>
 
-                <p>
-                    <strong>Message:</strong>
-                </p>
+    <p>
+        <strong>Message:</strong>
+    </p>
 
-                <p>
-                    ${message.trim()}
-                </p>
-            `
+    <p>
+        ${safeMessage.replace(/\n/g, "<br>")}
+    </p>
+`
         };
 
         await transporter.sendMail(mailOptions);

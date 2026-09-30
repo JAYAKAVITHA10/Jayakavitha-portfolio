@@ -7,10 +7,22 @@ const helmet = require("helmet");
 const rateLimit = require("express-rate-limit");
 
 const contactRoutes = require("./routes/contactRoutes");
+const authRoutes = require("./routes/authRoutes");
 
 
 const app = express();
 connectDB();
+
+const loginLimiter = rateLimit({
+    windowMs: 15 * 60 * 1000,
+    max: 5,
+    standardHeaders: true,
+    legacyHeaders: false,
+    message: {
+        success: false,
+        message: "Too many login attempts. Please try again later."
+    }
+});
 
 /* PORT */
 
@@ -27,19 +39,19 @@ app.use(
 
 /* CORS */
 
-app.use(
-    cors({
-        origin: true,
-        methods: [
-            "GET",
-            "POST",
-            "DELETE"
-        ],
-        allowedHeaders: [
-            "Content-Type"
-        ]
-    })
-);
+app.use(cors({
+    origin: true,
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"]
+}));
+
+app.use(helmet());
+
+app.use(express.json());
+
+app.use(express.urlencoded({
+    extended: true
+}));
 
 
 /* JSON */
@@ -129,7 +141,7 @@ app.use(
     contactRoutes
 );
 
-
+app.use("/api/auth", loginLimiter, authRoutes);
 /* 404 */
 
 app.use(
