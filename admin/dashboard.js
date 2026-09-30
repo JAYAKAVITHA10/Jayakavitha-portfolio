@@ -33,7 +33,7 @@ async function loadMessages() {
     try {
 
         const response = await fetch(
-            "http://127.0.0.1:5000/api/contact",
+            "https://jayakavitha-portfolio-api.onrender.com/api/contact",
             {
                 method: "GET",
 
@@ -136,7 +136,7 @@ async function deleteMessage(id) {
     try {
 
         const response = await fetch(
-            `http://127.0.0.1:5000/api/contact/${id}`,
+            `https://jayakavitha-portfolio-api.onrender.com/api/contact/${id}`,
             {
                 method: "DELETE",
 
